@@ -1,10 +1,10 @@
 ## Instructions
 
-Hi. We like to code, and we want to hire people like us. Please read these instructions carefully and follow them the best you can. If you get stuck email us--there's a ```mailto:``` link at the bottom of these instructions to do that.
+Please read these instructions carefully and follow them the best you can. If you get stuck email us--there's a ```mailto:``` link at the bottom of these instructions to do that.
 
 ## About the application - Todo's
 
-Everyone's so busy! We'd like an application to track everyone on our team's tasks that's intuitive, elegant, and fun to use. Your task is to build that experience for us and code it up using your favorite front end framework. You have the following [user stories](https://www.mountaingoatsoftware.com/agile/user-stories) to go on:
+Below is a simple ToDo application that we would like to you build, Following are the [user stories](https://www.mountaingoatsoftware.com/agile/user-stories):
 
 1. As a user, I should be able to view a page with a task list on it.
 2. As a user, I should be able to add a new task to the global task list.

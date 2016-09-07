@@ -23,12 +23,9 @@ A task is simply defined as a small piece of work with a description and can exi
 
 ### Architecture
 
-1. Implement front end with HTML, CSS, and JavaScript required. You can use any Templating engines you are familiar with (Example: Handlebars or EJS). If you prefer, you can use Angular framework for your client side instead.
-
-2.Implement back end with NodeJs, Express. Data layer can be flat JSON files or MongoDb.
-
+1. Implement front end with HTML, CSS, and JavaScript required. You can use any Templating engines you are familiar with (Example: Handlebars or EJS). If you prefer, you can use Angular framework for your client side instead. 
+2. Implement back end with NodeJs, Express. Data layer can be flat JSON files or MongoDb. 
 3. If you're familiar with Task runners like Gulp or Grunt use them to orchestrate your front end engineering process.
- 
 4. Make sure you have implemented unit tests with your choice of framework (Example: Jasmine or Mocha).
 
 

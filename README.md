@@ -23,7 +23,6 @@ mongoose
 swig (Template Engine)
 Clone the Repository Using Git clone command.
 
-    git clone git@github.com:rajesh612/ContactListApp.git
 Instructions to install Node Modules, Bower Dependencies and run the application in browser.
 
 Install Git Bash and Run the following commands in Git Bash command prompt.

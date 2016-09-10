@@ -1,34 +1,48 @@
-## Instructions
+ToDoApp
 
-Please read these instructions carefully and follow them the best you can. If you get stuck email us--there's a ```mailto:``` link at the bottom of these instructions to do that.
+It is a Mean Stack Application build using Node.js, Angular JS and Mongo DB to  Create,Edit, Update and Remove todolist. It is a single page application developed using NPM and bower.
 
-## About the application - Todo's
+Tools Required
 
-Below is a simple ToDo application that we would like to you build, Following are the [user stories](https://www.mountaingoatsoftware.com/agile/user-stories):
+Git Bash
+Node.js
+MongoDB
+RoboMongo
+WebStorm IDE
+postman
 
-1. As a user, I should be able to view a page with a task list on it.
-2. As a user, I should be able to add a new task to the task list.
-3. As a user, I should be able to remove a task from the task list.
-4. As a user, I should be able to reorder a task in the task list.
-5. As a user, I should be able to edit the name of a task in the task list.
-6. As a user, I should be able to mark a task in the list as completed.
+Node Modules Used:
 
-This is single user application and do not worry about cross-user scenarios or security in that respect.
+express
+body-parser
+chalk
+consolidate
+glob
+lodash
+mongoose
+swig (Template Engine)
+Clone the Repository Using Git clone command.
 
-A task is simply defined as a small piece of work with a description and can exist in one of two simple states: completed or not completed. As for the list, consider it empty any time someone first visits your index page; you don't have to worry about saving the state of your application between uses.
+    git clone git@github.com:rajesh612/ContactListApp.git
+Instructions to install Node Modules, Bower Dependencies and run the application in browser.
 
-### How to start
+Install Git Bash and Run the following commands in Git Bash command prompt.
 
-1. Fork this repository into your own Bitbucket branch.
-2. Solve the problem below, checking in to your branch as you go as if this were a real project you're working on. Note that we're also testing your familiarity with Bitbucket/Git. We will look at your commit history closely.
-3. Submit a pull request back to this repository with your solution when finished.
+cd ToDoApp/
+npm install
+bower install
+node server.js
+Open new Git Bash cmd and change the directory to your MongoDB folder.
 
-### Architecture
+Run the following commands.
 
-1. Implement front end with HTML, CSS, and JavaScript required. For this role, we prefer that you use a Templating engine you are familiar with (Example: Handlebars or EJS). 
-2. Implement back end with NodeJs, Express. Data layer can be flat JSON files or MongoDb. 
-3. Use Gulp or Grunt to orchestrate your front end engineering process.
-4. Make sure you have implemented unit tests with your choice of framework (Example: Jasmine or Mocha).
+./mongod
+./mongo
+Open RoboMongo and Create a DB Connection with todo  and user collections.
 
+Open browser and follow the below steps to use ToDo App.
 
-Please email questions to: code@credomobile.com.
+URL : http://localhost:3000/
+Click Add  for new todo list.
+Click Todolist to list all the todos.
+Edit, update and delete selected todo.

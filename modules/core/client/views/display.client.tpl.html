@@ -1,0 +1,27 @@
+
+<div class="grid-todo-container" ng-controller="displayCtrl">
+
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th ng-repeat="field in fields" ng-bind="field"></th>
+            <th>Action</th>
+
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr ng-repeat="todo in todos ">
+
+            <th  ng-repeat ="(key,value) in todo" ng-bind = "value"></th>
+
+            <td ng-click="update(todo)"><span class="glyphicon glyphicon-pencil"></span>Update</td>
+            <td ng-click="delete(todo._id)"><span class="glyphicon glyphicon-trash"></span>Remove</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+
+</div>

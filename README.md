@@ -2,7 +2,7 @@
 
 It is a Mean Stack Application build using Node.js, Angular JS and Mongo DB to  Create, Edit, Update and Remove todolist. It is a single page application developed using NPM and bower.
 
-###Tools Required
+##Tools Required
 ```
 Git Bash
 Node.js
@@ -11,7 +11,7 @@ RoboMongo
 WebStorm IDE
 postman
 ```
-#Node Modules Used:
+##Node Modules Used:
 ```
 express
 body-parser
@@ -23,7 +23,7 @@ mongoose
 swig (Template Engine)
 ```
 
-###Instructions to install Node Modules, Bower Dependencies and run the application in browser.
+##Instructions to install Node Modules, Bower Dependencies and run the application in browser.
 
 Install Git Bash and Run the following commands in Git Bash command prompt.
 ```

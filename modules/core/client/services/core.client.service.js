@@ -22,7 +22,7 @@ angular
             return $http.get('/api/task/' + id);
         }
 
-        var _updateTask = function (id,task) {
+        var _updateTask = function (id,todo) {
             var promise = $http.put('/api/task/' +id ,todo)
             return promise;
 
@@ -39,7 +39,8 @@ angular
 
        return {
            getTasks : _getTasks,
-           crateTask: _createTask,
+           getTask :  _getTask,
+           createTask: _createTask,
            updateTask: _updateTask,
            deleteTask: _deleteTask
        }

@@ -1,5 +1,5 @@
 
-<div class="contacts-container" ng-controller="saveCtrl">
+<div class="todo-container" ng-controller="saveCtrl">
 
 
     <label>
@@ -14,10 +14,9 @@
         completed: <input type="checkbox" ng-model="todo.completed"><br><br>
     </label>
 
+    <button type="button" class="btn btn-default" ng-click="saveTask(todo)">Save</button>
 
-    <div>
-        <button type="button" class="btn btn-default" ng-click="saveTask(todo)">Save</button>
 
-</div>
+
 
 </div>

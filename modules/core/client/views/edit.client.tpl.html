@@ -1,4 +1,4 @@
-<div class="contacts-container" ng-controller="updateCtrl">
+<div class="todo-container" ng-controller="updateCtrl">
 
 
     <label>
@@ -13,10 +13,9 @@
         completed: <input type="checkbox" ng-model="todo.completed"><br><br>
     </label>
 
+    <button type="button" class="btn btn-default" ng-click="update(todo)">Edit</button>
 
-    <div>
-        <button type="button" class="btn btn-default" ng-click="update(todo)">Edit</button>
 
-    </div>
+
 
 </div>

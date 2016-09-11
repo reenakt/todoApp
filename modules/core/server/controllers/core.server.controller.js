@@ -39,20 +39,26 @@ module.exports.createTask = function(req,res){
 
 module.exports.validateTodoIdAndForward= function(req,res,next,id){
     var metadata = req.metadata= {};
-    metadata.todoId =id;
 
-    taskService.findTaskById(id,function (err,foundTask){
-        if(err){
-            next();
-        } else if(foundTask) {
-            metadata.model = foundTask;
-            next();
-        }else{
-            next(new Error('failed to found task'));
-        }
-    });
+    metadata.todoId = id;
+
+    taskService.findTaskById(id,function (err,foundTask) {
+
+       if(err){
+           next();
+       }
+        else if(foundTask){
+             metadata.model = foundTask;
+           next();
+
+       }
 
 
+
+    })
+
+
+        next();
 }
 
 module.exports.updateTodo = function(req,res) {
@@ -96,9 +102,9 @@ module.exports.deleteTodo = function(req,res) {
 module.exports.getTodoById = function(req,res){
 
     var todo= req.body,
-        id = req.metadata.taskId;
+        id = req.metadata.todoId;
 
-    taskService.getContactById(id,todo,function(err,todo){
+    taskService.getTaskById(id,todo,function(err,todo){
 
         if(err){
             res.status(400)

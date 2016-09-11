@@ -12,6 +12,8 @@ angular
 
                 url:'/display',
                 templateUrl:'modules/core/client/views/display.client.tpl.html'
+
+
             })
 
 
@@ -19,6 +21,7 @@ angular
             .state('create', {
                 url: '/create',
                 templateUrl: 'modules/core/client/views/create.client.tpl.html'
+
 
             })
 
@@ -32,6 +35,7 @@ angular
                 },
                 controller:'editCtrl'
             })
+
 
 
 

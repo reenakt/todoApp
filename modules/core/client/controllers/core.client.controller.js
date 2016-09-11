@@ -10,8 +10,6 @@ angular
 
             $scope.todos = response;
 
-     $scope.fields = Object.keys($scope.todos[0] || []);
-
         }
 
         var failureCallback = function (err) {
@@ -24,7 +22,7 @@ angular
 
         //update todo after clicking action
 
-        $scope.updateTask = function (todo) {
+        $scope.update = function (todo) {
 
             $state.go('edit', {todoId: todo._id});
         }
@@ -53,16 +51,19 @@ angular
 
     .controller('saveCtrl',['$scope','TaskService',function($scope,TaskService){
 
+
         var todo = $scope.todo;
 
         $scope.saveTask=function(todo){
+
             var savePromise = TaskService.createTask(todo);
+
             var successCallback = function (response) {
                 console.log("success");
             }
 
             var failureCallback = function (err) {
-                console.log("Error while saving contacts");
+                console.log("Error while saving task");
             }
 
             savePromise
@@ -70,7 +71,6 @@ angular
                 .success(successCallback)
                 .error(failureCallback);
         }
-
     }])
 
     .controller('editCtrl',['$scope','todoId','TaskService', function ($scope , todoId, TaskService) {
@@ -92,14 +92,14 @@ angular
 
 
         $scope.update = function(todo) {
-            var updatePromise = TaskService.updateTask(todo._id,todo);
+            var updatePromise = TaskService.updateTask(todo._id ,todo);
             var successCallback = function (response) {
                 console.log("success");
                 $state.go('display');
             };
 
             var failureCallback = function (err) {
-                console.log("Error while update contacts");
+                console.log("Error while update task");
                 $state.go('edit');
             }
 

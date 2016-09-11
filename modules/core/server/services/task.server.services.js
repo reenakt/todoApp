@@ -40,7 +40,7 @@ module.exports.getTaskById = function(id,todo,callback){
         if(err)
             callback(err);
         else
-            callback(null,task);
+            callback(null,todo);
     })
 }
 

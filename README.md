@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 #ToDo App
 
 It is a Mean Stack Application build using Node.js, Angular JS and Mongo DB to  Create, Edit, Update and Remove todolist. It is a single page application developed using NPM and bower.
@@ -50,4 +49,3 @@ Click Add  for new todo list.
 Click Todolist to list all the todos.
 Edit, update and delete selected todo.
 ```
->>>>>>> f0371b87bccf7c02bcc5afe53c1ad1dc6fd5d3e8

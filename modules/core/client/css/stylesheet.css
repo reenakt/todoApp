@@ -3,18 +3,10 @@ body {
     padding-top: 80px;
 }
 
-.contacts-container{
+.todo-container{
 
     margin:5px;
     padding:5px;
 
-}
-
-.glyphicon.glyphicon-pencil{
-    cursor: pointer;
-}
-
-.glyphicon.glyphicon-trash{
-    cursor: pointer;
 }
 

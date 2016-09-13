@@ -36,7 +36,6 @@ module.exports.createTask = function(req,res){
         }
     })
 }
-
 module.exports.validateTodoIdAndForward= function(req,res,next,id){
     var metadata = req.metadata= {};
 
@@ -44,21 +43,18 @@ module.exports.validateTodoIdAndForward= function(req,res,next,id){
 
     taskService.findTaskById(id,function (err,foundTask) {
 
-       if(err){
-           next();
-       }
-        else if(foundTask){
-             metadata.model = foundTask;
-           next();
+        if(err){
 
-       }
+            res.status(400)
 
+                .send({message:"Error:: Unable to validate task"})
+        }
+        else {
+            next();
 
+        }
+    });
 
-    })
-
-
-        next();
 }
 
 module.exports.updateTodo = function(req,res) {
@@ -70,10 +66,12 @@ module.exports.updateTodo = function(req,res) {
         if (err) {
             res.status(400)
                 .send({message: "unable to update task.please try again"})
+
+            return;
         } else {
             res
                 .status(200)
-                .json(updatedTask);
+                .json(todo);
         }
 
     });
@@ -85,19 +83,20 @@ module.exports.deleteTodo = function(req,res) {
 
     var id= req.metadata.todoId;
 
-    taskService.deleteTodo(id,function(err,todo) {
+    taskService.deleteTodo(id,function(err) {
 
 
         if (err) {
             res.status(400)
                 .send({message: "unable to delete task "})
+            return;
         } else {
             res.status(200)
-                .json(todo);
+                .json("Success");
         }
     });
 }
-// get contact by id
+// get task by id
 
 module.exports.getTodoById = function(req,res){
 
@@ -109,6 +108,7 @@ module.exports.getTodoById = function(req,res){
         if(err){
             res.status(400)
                 .send({message:"unable to get task"})
+            return;
         }else{
             res.status(200)
                 .json(todo);

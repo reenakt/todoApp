@@ -31,7 +31,7 @@ module.exports.getTasks = function(callback){
 
 }
 
-//get contact by id
+//get task by id
 
 module.exports.getTaskById = function(id,todo,callback){
 
@@ -44,42 +44,51 @@ module.exports.getTaskById = function(id,todo,callback){
     })
 }
 
-
-
-//find contact by id
-
 module.exports.findTaskById = function (id,callback) {
 
     Todo.findOne({'_id':id}, function(err, todo){
 
-        if(err) throw err;
+        if(err) {
+            callback(err)
+        }else {
 
-        callback(todo);
+            callback(null,todo);
+        }
+
+        return todo;
     });
 
 }
+
 module.exports.updateTodo = function(id,updatedTask,callback){
 
-    Todo.findByIdAndUpdate(id,updatedTask,function(err,todo){
-        if(err) {
-            callback (err);
+    var checkTodo = new Todo(updatedTask);
+
+    Todo.update({_id: id},updatedTask,null,function (err,todo) {
+
+        if(err){
+
+            callback(err);
+        }else{
+            callback(null,updatedTask);
         }
-        callback(null,todo);
-    });
+
+    })
+
 
 }
 
+
 module.exports.deleteTodo = function(id,callback) {
-    Todo.findByIdAndRemove(id, function (err) {
+
+    Todo.remove({_id:id}, function (err) {
+
         if (err) {
             callback(err);
-        }else
-            Todo.find({}, {__v:0}, function(err, todo){
-                if(err) callback(err);
-                else callback(null, todo);
+        }else{
 
-            })
-
+            callback(null);
+        }
 
 
     });

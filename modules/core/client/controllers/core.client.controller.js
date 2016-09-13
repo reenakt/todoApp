@@ -33,6 +33,7 @@ angular
 
             var successCallback = function (response) {
                 $scope.message = response;
+                console.log("success")
 
             };
 
@@ -80,7 +81,7 @@ angular
             .getTask(todoId)
             .success(function(todo){
 
-                $scope.task=todo;
+                $scope.todo = todo;
 
             }).error(function(err){
             console.log("Error::occured during get operation")

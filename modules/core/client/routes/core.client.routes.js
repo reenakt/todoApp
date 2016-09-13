@@ -22,7 +22,6 @@ angular
                 url: '/create',
                 templateUrl: 'modules/core/client/views/create.client.tpl.html'
 
-
             })
 
             .state('edit',{

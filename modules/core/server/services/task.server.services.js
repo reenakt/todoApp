@@ -9,24 +9,28 @@ module.exports.saveTask = function(savableTask,callback){
     var todo = new Todo(savableTask);
 
     todo.save(function(err){
-        if(err){
+        if(err)
             callback(err);
-        }
-        callback(null,todo);
+        else
+            callback(null,todo);
+
+
     })
 }
 
 module.exports.getTasks = function(callback){
 
     Todo.find({},{__v:0}, function(err,todo){
-        if(err) throw err;
 
-        callback(null,todo);
+        if(err)
+            callback(err);
+
+        else
+            callback(null,todo);
+
+
     })
 
-    // get only completed tasks
-
-    Todo.find({completed:true},callback);
 
 
 }

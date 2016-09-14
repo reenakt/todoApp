@@ -96,6 +96,7 @@ angular
             var updatePromise = TaskService.updateTask(todo._id ,todo);
             var successCallback = function (response) {
                 console.log("success");
+
                 $state.go('display');
             };
 

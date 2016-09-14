@@ -5,14 +5,18 @@ var taskService = require('../services/task.server.services');
 module.exports.getTasks = function(req,res){
 
     taskService.getTasks(function(err,todos){
+
         if(err){
 
             res
                 .status(400)
-                .send({message: "could not get the task"})
+                .send({message: "could not get the task"});
+
         }else{
-            res.status(200)
-            res.json(todos);
+            res
+                .status(200)
+                 .json(todos);
+
         }
     });
 
@@ -23,12 +27,19 @@ module.exports.createTask = function(req,res){
 
     var todo = req.body;
 
+    if(!todo){
+        res.status(400);
+        res.end("Error : couldn't save todo");
+    }
+
     taskService.saveTask(todo, function(err,todo){
         if(err){
 
             res
                 .status(400)
-                .send({message:"Error : internal error while saving data"})
+                .send({message:"Error : Internal error while saving data"});
+
+
         }else{
             res
                 .status(200)
@@ -46,14 +57,17 @@ module.exports.validateTodoIdAndForward= function(req,res,next,id){
         if(err){
 
             res.status(400)
-
                 .send({message:"Error:: Unable to validate task"})
-        }
-        else {
-            next();
 
+            return;
+
+        }else if(foundTask) {
+
+            metadata.model = foundTask;
+             next();
         }
     });
+
 
 }
 
@@ -67,7 +81,6 @@ module.exports.updateTodo = function(req,res) {
             res.status(400)
                 .send({message: "unable to update task.please try again"})
 
-            return;
         } else {
             res
                 .status(200)
@@ -89,7 +102,7 @@ module.exports.deleteTodo = function(req,res) {
         if (err) {
             res.status(400)
                 .send({message: "unable to delete task "})
-            return;
+
         } else {
             res.status(200)
                 .json("Success");
@@ -108,7 +121,7 @@ module.exports.getTodoById = function(req,res){
         if(err){
             res.status(400)
                 .send({message:"unable to get task"})
-            return;
+
         }else{
             res.status(200)
                 .json(todo);
